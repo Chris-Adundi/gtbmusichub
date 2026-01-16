@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
@@ -8,12 +10,12 @@ export default function Home() {
         and sound engineers — from beginner to advanced.
       </p>
 
-      <a
+      <Link
         href="/courses"
         className="px-6 py-3 bg-black text-white rounded hover:bg-gray-800"
       >
         Explore Courses
-      </a>
+      </Link>
     </main>
   );
 }

@@ -1,25 +1,25 @@
 export default function SaxophoneCoursePage() {
   return (
-    <main className="min-h-screen px-6 py-10 max-w-4xl mx-auto">
+    <main className="min-h-screen max-w-4xl mx-auto px-6 py-10">
       <h1 className="text-3xl font-bold mb-4">Saxophone</h1>
+
       <p className="text-gray-600 mb-8">
-        Learn saxophone techniques, improvisation, and performance skills.
+        Learn saxophone from beginner to advanced levels, including technique, reading music, improvisation, and performance.
       </p>
 
-      <div className="grid gap-6 sm:grid-cols-3">
-        <Level title="Beginner" sessions={12} />
-        <Level title="Intermediate" sessions={16} />
-        <Level title="Advanced" sessions={20} />
+      <div className="grid gap-4 sm:grid-cols-3">
+        <a href="/courses/saxophone/beginner" className="border rounded p-4 hover:bg-gray-50">
+          Beginner (12 Sessions)
+        </a>
+
+        <a href="/courses/saxophone/intermediate" className="border rounded p-4 hover:bg-gray-50">
+          Intermediate (16 Sessions)
+        </a>
+
+        <a href="/courses/saxophone/advanced" className="border rounded p-4 hover:bg-gray-50">
+          Advanced (20 Sessions)
+        </a>
       </div>
     </main>
-  );
-}
-
-function Level({ title, sessions }: { title: string; sessions: number }) {
-  return (
-    <div className="p-4 border rounded">
-      <h2 className="font-semibold text-lg mb-2">{title}</h2>
-      <p className="font-medium">{sessions} Sessions</p>
-    </div>
   );
 }

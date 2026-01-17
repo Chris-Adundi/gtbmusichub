@@ -1,32 +1,30 @@
-import Link from "next/link";
-
-const courses = [
-  "piano",
-  "guitar",
-  "voice-harmony",
-  "drums",
-  "music-theory",
-  "saxophone",
-  "trumpet",
-  "violin",
-  "music-production",
-  "sound-engineering",
-];
-
 export default function CoursesPage() {
+  const courses = [
+    { name: "Piano / Keyboard", slug: "piano" },
+    { name: "Guitar", slug: "guitar" },
+    { name: "Voice & Harmony", slug: "voice-harmony" },
+    { name: "Drums & Percussion", slug: "drums" },
+    { name: "Music Theory", slug: "music-theory" },
+    { name: "Saxophone", slug: "saxophone" },
+    { name: "Trumpet", slug: "trumpet" },
+    { name: "Violin", slug: "violin" },
+    { name: "Music Production & Arrangement", slug: "music-production" },
+    { name: "Sound Engineering & Live Sound", slug: "sound-engineering" },
+  ];
+
   return (
-    <main className="min-h-screen max-w-4xl mx-auto px-6 py-10">
-      <h1 className="text-3xl font-bold mb-6">All Courses</h1>
+    <main className="min-h-screen max-w-5xl mx-auto px-6 py-10">
+      <h1 className="text-3xl font-bold mb-6">Courses</h1>
 
       <ul className="grid gap-4 sm:grid-cols-2">
-        {courses.map((course) => (
-          <li key={course}>
-            <Link
-              href={`/courses/${course}/beginner`}
-              className="block border rounded px-4 py-3 hover:bg-gray-50"
+        {courses.map(course => (
+          <li key={course.slug}>
+            <a
+              href={`/courses/${course.slug}`}
+              className="block border rounded p-4 hover:bg-gray-50"
             >
-              {course.replace("-", " ").toUpperCase()}
-            </Link>
+              {course.name}
+            </a>
           </li>
         ))}
       </ul>
